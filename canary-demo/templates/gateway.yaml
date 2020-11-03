@@ -20,7 +20,7 @@ metadata:
   name: canary-demo-vs
 spec:
   gateways:
-  - monitoring-gateway.istio-system.svc.cluster.local
+  - istio-system/monitoring-gateway
   hosts:
   - "spike-canary.pogoapps.com"
   http:
