@@ -15,7 +15,7 @@ spec:
       protocol: TCP
       name: http
   selector:
-    release: {{ .Release.Name }}
+    app: {{ .Values.service.name }}
 ---
 apiVersion: v1
 kind: Service
@@ -33,5 +33,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    release: {{ .Release.Name }}
+    app: {{ .Values.service.name }}
 ---
