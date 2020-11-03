@@ -6,6 +6,7 @@ metadata:
   labels:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+    app: {{ .Values.service.name }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -23,6 +24,7 @@ metadata:
   labels:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+    app: {{ .Values.service.name }}
 spec:
   type: {{ .Values.service.type }}
   ports:
