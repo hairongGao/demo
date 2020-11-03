@@ -12,7 +12,7 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "*"
+    - "spike-canary.pogoapps.com"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -22,7 +22,7 @@ spec:
   gateways:
   - spike-gateway
   hosts:
-  - spike-canary.pogoapps.com
+  - "spike-canary.pogoapps.com"
   http:
   - name: primary
     route:
