@@ -27,8 +27,8 @@ spec:
   - name: primary
     route:
     - destination:
-        host: {{ .Values.service.name }}-stable
+        host: {{ .Values.service.name }}-stable.canary-demo.svc.cluster.local
       weight: 100
     - destination:
-        host: {{ .Values.service.name }}-canary
+        host: {{ .Values.service.name }}-canary.canary-demo.svc.cluster.local
       weight: 0
