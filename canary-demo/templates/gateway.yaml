@@ -1,18 +1,18 @@
----
-apiVersion: networking.istio.io/v1alpha3
-kind: Gateway
-metadata:
-  name: spike-gateway
-spec:
-  selector:
-    istio: ingressgateway # use istio default controller
-  servers:
-  - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    hosts:
-    - "spike-canary.pogoapps.com"
+#---
+#apiVersion: networking.istio.io/v1alpha3
+#kind: Gateway
+#metadata:
+#  name: spike-gateway
+#spec:
+#  selector:
+#    istio: ingressgateway # use istio default controller
+#  servers:
+#  - port:
+#      number: 80
+#      name: http
+#     protocol: HTTP
+#    hosts:
+#    - "spike-canary.pogoapps.com"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -20,7 +20,7 @@ metadata:
   name: canary-demo-vs
 spec:
   gateways:
-  - spike-gateway
+  - monitoring-gateway.istio-system.svc.cluster.local
   hosts:
   - "spike-canary.pogoapps.com"
   http:
