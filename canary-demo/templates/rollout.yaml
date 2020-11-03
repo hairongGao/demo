@@ -5,6 +5,7 @@ metadata:
   labels:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+    app: {{ .Values.service.name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3
