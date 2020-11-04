@@ -27,12 +27,12 @@ spec:
   - name: primary
     route:
     - destination:
-        host: {{ .Values.service.name }}-stable.canary-demo.svc.cluster.local
+        host: {{ .Values.service.name }}-stable
         port:
           number: 8080
       weight: 100
     - destination:
-        host: {{ .Values.service.name }}-canary.canary-demo.svc.cluster.local
+        host: {{ .Values.service.name }}-canary
         port:
           number: 8080
       weight: 0
