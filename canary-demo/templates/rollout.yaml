@@ -6,6 +6,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
     app: {{ .Values.service.name }}
+namespace: canary-demo
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3
