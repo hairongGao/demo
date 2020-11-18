@@ -33,10 +33,11 @@ spec:
     metadata:
       labels:
         app: {{ .Values.service.name }}
+        version: {{ .Values.image.tag }}
     spec:
       containers:
         - name: {{ .Values.service.name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
